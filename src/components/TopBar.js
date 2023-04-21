@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import imgPlc from '../img/kinnesotan.svg';
+import SidebarContext from './sidebarContext';
 
 function TopBar() {
+    const { isSidebarToggled, setIsSidebarToggled } = useContext(SidebarContext);
+
+    const handleSidebarToggle = () => {
+        console.log('handleSidebarToggle called');
+        setIsSidebarToggled(!isSidebarToggled);
+    };
+
+    
   return (
       <>
     {/* Topbar */}
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
         {/* Sidebar Toggle (Topbar) */}
         <button
-        id="sidebarToggleTop"
-        className="btn btn-link d-md-none rounded-circle mr-3"
+            id="sidebarToggleTop"
+            className="btn btn-link d-md-none rounded-circle mr-3"
+            onClick={handleSidebarToggle}
         >
-        <i className="fa fa-bars" />
+            <i className="fa fa-bars" />
         </button>
         {/* Topbar Search */}
         <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">

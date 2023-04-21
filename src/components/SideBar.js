@@ -1,62 +1,23 @@
-import React, {useState, useEffect} from 'react';
-//import { sidebarFunction } from '../js/SidebarCollapse';
+import React, {useState, useEffect, useContext} from 'react';
+import SidebarContext from './sidebarContext';
 
 function SideBar() {
-    const [isToggled, setIsToggled] = useState(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-        if (window.innerWidth < 768) {
-            closeMenu();
-        }
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const { isSidebarToggled, setIsSidebarToggled } = useContext(SidebarContext);
+    const sidebarClassName = isSidebarToggled ? 'toggled' : '';
 
-    const toggleMenu = () => {
-        setIsToggled(!isToggled);
+    const handleSidebarToggle = () => {
+        setIsSidebarToggled(!isSidebarToggled);
     };
 
-    const closeMenu = () => {
-        setIsToggled(false);
-    };
-
-    const handleScroll = () => {
-        const scrollDistance = window.pageYOffset;
-        const scrollButton = document.querySelector('.scroll-to-top');
-        if (scrollButton) {
-        if (scrollDistance > 100) {
-            scrollButton.classList.add('visible');
-        } else {
-            scrollButton.classList.remove('visible');
-        }
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const handleScrollTopClick = (e) => {
-        e.preventDefault();
-        const targetId = e.currentTarget.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-        window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: 'smooth',
-        });
-        }
-    };
   return (
     <>
         {/* Sidebar */}
         <ul
-            className={`navbar-nav bg-gradient-primary sidebar sidebar-dark accordion ${isToggled ? "toggled" : ""}`}
+            className={`navbar-nav bg-gradient-primary sidebar sidebar-dark accordion  ${sidebarClassName}`}
             id="accordionSidebar"
         >
+
             {/* Sidebar - Brand */}
             <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div className="sidebar-brand-icon rotate-n-15">
@@ -111,7 +72,7 @@ function SideBar() {
             <hr className="sidebar-divider d-none d-md-block" />
             {/* Sidebar Toggler (Sidebar) */}
             <div className="text-center d-none d-md-inline">
-                <button className="rounded-circle border-0" id="sidebarToggle" onClick={toggleMenu} />
+                <button className="rounded-circle border-0" id="sidebarToggle" onClick={handleSidebarToggle} />
             </div>
             
         </ul>

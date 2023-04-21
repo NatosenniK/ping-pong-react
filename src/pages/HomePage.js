@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Helmet } from 'react-helmet';
 
 import TopBar from '../components/TopBar';
@@ -6,8 +6,11 @@ import SideBar from '../components/SideBar';
 import QuickStats from '../components/QuickStats';
 import MatchesPlayed from '../components/MatchesPlayed';
 import PlayerRatings from '../components/PlayerRatings';
+import SidebarContext from '../components/sidebarContext';
 
 function HomePage() {
+  const [isSidebarToggled, setIsSidebarToggled] = useState(false);
+
   return (
     <div>
       <>
@@ -17,6 +20,7 @@ function HomePage() {
       </Helmet>
       {/* Page Wrapper */}
       <div id="wrapper">
+        <SidebarContext.Provider value={{ isSidebarToggled, setIsSidebarToggled }}>
         {/* Sidebar */}
           <SideBar />
         {/* End of Sidebar */}
@@ -27,20 +31,13 @@ function HomePage() {
             {/* Topbar */}
 
             <TopBar />
-              
+            
             {/* End of Topbar */}
             {/* Begin Page Content */}
             <div className="container-fluid">
               {/* Page Heading */}
               <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
-                <a
-                  href="#"
-                  className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                >
-                  <i className="fas fa-download fa-sm text-white-50" /> Generate
-                  Report
-                </a>
+                <h1 className="h3 mb-0 text-gray-800">Ping Pong Tracker Stats</h1>
               </div>
               <div className='row'>
                 <QuickStats />
@@ -265,6 +262,7 @@ function HomePage() {
           {/* End of Footer */}
         </div>
         {/* End of Content Wrapper */}
+        </SidebarContext.Provider>  
       </div>
       {/* End of Page Wrapper */}
     </>

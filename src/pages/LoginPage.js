@@ -1,8 +1,12 @@
 import React from 'react';
-
+import { Helmet } from 'react-helmet';
 function LoginPage() {
   return (
     <>
+    <Helmet>
+        <title>Login - Ping Pong Tracker</title>
+        <meta name="description" content="Login to your Ping Pong Tracker account" />
+    </Helmet>
     <div className='container'>
       <div className="row justify-content-center">
         <div className="col-xl-10 col-lg-12 col-md-9">

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+
 import TopBar from '../components/TopBar';
 import SideBar from '../components/SideBar';
 import QuickStats from '../components/QuickStats';
@@ -9,6 +11,10 @@ function HomePage() {
   return (
     <div>
       <>
+      <Helmet>
+        <title>Ping Pong Tracker - See Where You Rank</title>
+        <meta name="description" content="Log your ping pong scores with your friends and see how you stack up against one another." />
+      </Helmet>
       {/* Page Wrapper */}
       <div id="wrapper">
         {/* Sidebar */}

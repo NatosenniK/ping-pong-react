@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { checkPasswordMatch, strength } from '../components/PasswordChecker';
 
 function RegisterPage () {
+    useEffect(() => {
+        document.getElementById("txtConfirmPassword").addEventListener("keyup", checkPasswordMatch);
+        document.getElementById("txtNewPassword").addEventListener("keyup", strength);
+    
+        return () => {
+          document.getElementById("txtConfirmPassword").removeEventListener("keyup", checkPasswordMatch);
+          document.getElementById("txtNewPassword").removeEventListener("keyup", strength);
+        }
+      }, []);
     return (
     <>
         <Helmet>
@@ -45,6 +55,7 @@ function RegisterPage () {
                                 id="txtNewPassword"
                                 placeholder="Password"
                                 name="password"
+                                onKeyUp={() => { checkPasswordMatch(); strength(); }}
                             />
                             </div>
                             <div className="col-sm-6">
@@ -53,7 +64,7 @@ function RegisterPage () {
                                 className="form-control form-control-user"
                                 id="txtConfirmPassword"
                                 placeholder="Repeat Password"
-                                onchange="checkPasswordMatch();"
+                                onKeyUp={() => { checkPasswordMatch(); strength(); }}
                             />
                             </div>
                         </div>
@@ -80,7 +91,7 @@ function RegisterPage () {
                         </form>
                         <hr />
                         <div className="text-center">
-                        <a className="small" href="forgot-password.php">
+                        <a className="small" href="/forgot-password">
                             Forgot Password?
                         </a>
                         </div>
@@ -95,6 +106,7 @@ function RegisterPage () {
                 </div>
             </div>
         </div>
+        <script src="../components/passwordChecker.js"></script>
 
     </>
     );

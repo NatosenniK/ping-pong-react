@@ -38,7 +38,7 @@ function ForgotPasswordPage () {
                                     />
                                 </div>
                                 <a
-                                    href="login.html"
+                                    href="/login"
                                     className="btn btn-primary btn-user btn-block"
                                 >
                                     Reset Password
@@ -46,12 +46,12 @@ function ForgotPasswordPage () {
                                 </form>
                                 <hr />
                                 <div className="text-center">
-                                <a className="small" href="register.php">
+                                <a className="small" href="/register">
                                     Create an Account!
                                 </a>
                                 </div>
                                 <div className="text-center">
-                                <a className="small" href="login.php">
+                                <a className="small" href="/login">
                                     Already have an account? Login!
                                 </a>
                                 </div>

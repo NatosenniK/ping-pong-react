@@ -1,4 +1,5 @@
 import React from "react";
+import MyChart from "./charts/MatchesPlayedChart";
 
 function MatchesPlayed () {
     return (
@@ -36,7 +37,7 @@ function MatchesPlayed () {
                 {/* Card Body */}
                 <div className="card-body">
                     <div className="chart-area">
-                    <canvas id="myAreaChart" />
+                    <MyChart />
                     </div>
                 </div>
                 </div>

@@ -46,6 +46,4 @@ export function strength() {
       progressBar.classList.add(currClass);
     }
     progressBar.style.width = desc[score]['width'];
-    console.log(desc[score]);
-    console.log(progressBar);
   }

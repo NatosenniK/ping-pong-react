@@ -6,7 +6,6 @@ function TopBar() {
     const { isSidebarToggled, setIsSidebarToggled } = useContext(SidebarContext);
 
     const handleSidebarToggle = () => {
-        console.log('handleSidebarToggle called');
         setIsSidebarToggled(!isSidebarToggled);
     };
 

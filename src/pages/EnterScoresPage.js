@@ -3,8 +3,8 @@ import React from 'react';
 function EnterScoresPage() {
   return (
     <div>
-      <h1>Welcome to my Ping Pong Ranking App</h1>
-      <p>This is the home page of the app.</p>
+      <h1>Enter Scores Placeholder</h1>
+      <p>This is the page where you will enter scores.</p>
     </div>
   );
 }

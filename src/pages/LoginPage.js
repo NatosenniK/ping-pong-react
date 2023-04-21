@@ -66,12 +66,12 @@ function LoginPage() {
                     </form>
                     <hr />
                     <div className="text-center">
-                      <a className="small" href="forgot-password.php">
+                      <a className="small" href="/forgot-password">
                         Forgot Password?
                       </a>
                     </div>
                     <div className="text-center">
-                      <a className="small" href="register.php">
+                      <a className="small" href="/register">
                         Create an Account!
                       </a>
                     </div>

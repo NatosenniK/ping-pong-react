@@ -3,8 +3,8 @@ import React from 'react';
 function StandingsPage() {
   return (
     <div>
-      <h1>Welcome to my Ping Pong Ranking App</h1>
-      <p>This is the home page of the app.</p>
+      <h1>Standings Placeholder</h1>
+      <p>This is where you will view the standings.</p>
     </div>
   );
 }

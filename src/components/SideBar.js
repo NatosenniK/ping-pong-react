@@ -37,7 +37,7 @@ function SideBar() {
                 <i className="fas fa-sign-in-alt" />
                 <span>Login</span>
             </a>
-            <a className="nav-link" href="register.php">
+            <a className="nav-link" href="/register">
                 <i className="fas fa-user" />
                 <span>Register</span>
             </a>

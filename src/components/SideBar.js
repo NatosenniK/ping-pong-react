@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import SidebarContext from './sidebarContext';
+import { NavLink } from 'react-router-dom';
 
 function SideBar() {
 
@@ -28,11 +29,11 @@ function SideBar() {
             {/* Divider */}
             <hr className="sidebar-divider my-0" />
             {/* Nav Item - Dashboard */}
-            <li className="nav-item active">
-                <a className="nav-link" href="/">
+            <li className="nav-item">
+                <NavLink className="nav-link" exact activeClassName="active" to="/">
                     <i className="fas fa-fw fa-home" />
                     <span>Home</span>
-                </a>
+                </NavLink>
             </li>
             {/* Divider */}
             <hr className="sidebar-divider" />
@@ -40,14 +41,14 @@ function SideBar() {
             <div className="sidebar-heading">Account Management</div>
             {/* Nav Item - Pages Collapse Menu */}
             <li className="nav-item">
-                <a className="nav-link" href="/login">
+                <NavLink className="nav-link" activeClassName="active" to="/login">
                     <i className="fas fa-sign-in-alt" />
                     <span>Login</span>
-                </a>
-                <a className="nav-link" href="/register">
+                </NavLink>
+                <NavLink className="nav-link" activeClassName="active" to="/register">
                     <i className="fas fa-user" />
                     <span>Register</span>
-                </a>
+                </NavLink>
             </li>
 
             {/* Divider */}
@@ -57,16 +58,16 @@ function SideBar() {
 
             {/* Nav Item - Score Tracking */}
             <li className="nav-item">
-                <a className="nav-link" href="/stats">
+                <NavLink className="nav-link" activeClassName="active" to="/stats">
                     <i className="fas fa-fw fa-chart-area" />
                     <span>Stats</span>
-                </a>
+                </NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/standings">
+                <NavLink className="nav-link" activeClassName="active" to="/standings">
                     <i className="fas fa-fw fa-table" />
                     <span>Standings</span>
-                </a>
+                </NavLink>
             </li>
             {/* Divider */}
             <hr className="sidebar-divider d-none d-md-block" />

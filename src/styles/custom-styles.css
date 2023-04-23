@@ -55,3 +55,7 @@
 	font-size: 10px;
 	font-weight: 700;
 }
+.sidebar-dark .nav-item .nav-link.active, .sidebar-dark .nav-item .nav-link.active i {
+    color: #fff;
+	opacity: 1.0 !important;
+}
